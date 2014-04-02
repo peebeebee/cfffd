@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+/**
+ * @file
+ * Custom form fields for Drupal (cff)
+ *
+ * This is part of the cfffd library to have custom...
+ * - checkboxes
+ * - radios
+ * - selects
+ * - filefields
+ *
+ * @author: Peter Briers
+ * @version: 0.0.2
+ */
+
+// Custom form replacement container
+.cff-container {
+  position: relative;
+  display: inline-block;
+}
+
+// Redo Focus
+.cff-input:focus + .cff-replacement,
+.cff-input:active + .cff-replacement {
+  box-shadow: 0 0 6px 2px #86B0D6;
+}
+
+// Custom select
+.cff-select {
+  .cff-replacement {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: white;
+    z-index: 10;
+  }
+
+  .cff-feedback {
+    display: block;
+    padding: 0.25ex 1ex;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cff-button {
+    float: right;
+    text-align: center;
+    padding: 0.25ex 1ex;
+    position: relative;
+    &:before {
+      content: '▼';
+    }
+  }
+
+  .cff-input {
+    position: relative;
+    z-index: 20;
+    opacity: 0;
+    &:focus {
+      outline: none;
+      border: none !important;
+    }
+  }
+
+}
+
+//
+
+
+
+
+
+
+
+
+
+//// CUSTOM CHECKBOX & RADIOS
+//.form-item.form-type-checkbox,
+//.form-item.form-type-radio {
+//  position: relative;
+//  overflow: hidden;
+//  input {
+//    width: 18px;
+//    height: 18px;
+//    margin: 3px;
+//    padding: 0;
+//    border: 1px solid transparent;
+//    opacity: 0;
+//    position: absolute;
+//    left: -1000px;
+//  }
+//  label {
+//    margin-left: 25px;
+//    line-height: 22px;
+//  }
+//  label:before {
+//    font-size: 11px;
+//    line-height: 13px;
+//    text-align: center;
+//    position: absolute;
+//    left: 0px;
+//    top: 0px;
+//    content: '';
+//    display: block;
+//  }
+//  input:focus + label:before {
+//    border: 1px solid $clr-form-input-focus-border;
+//  }
+//}
+//
+//// Custom checkboxes
+//.form-type-checkbox {
+//  label:before {
+//    width: 14px;
+//    height: 14px;
+//    border: 1px solid $clr-form-input-default-border;
+//    background-color: $clr-form-input-default-background;
+//    background-color: transparent;
+//    float: left;
+//    margin-top: 2px;
+//  }
+//  input:checked + label:before {
+//    content: '✔';
+//    color: $clr-form-input-checked-text;
+//  }
+//  // IE8 stuff... can't go after a comma with the previous. Reasons unknown...
+//  input.checked + label:before {
+//    content: '✔';
+//    color: $clr-form-input-checked-text;
+//  }
+//  input.error + label:before {
+//    border-color: $clr-error;
+//  }
+//
+//}
+//
+//// Custom radios
+//.form-type-radio {
+//  label:before {
+//    width: 15px;
+//    height: 15px;
+//    margin-top: 2px;
+//    border-radius: 50%;
+//    border: 1px solid $clr-form-input-default-border;
+//    background-color: $clr-form-input-default-background;
+//    box-shadow: 0 0 0 1px $clr-form-input-default-background inset;
+//    float: left;
+//  }
+//  input:checked + label:before {
+//    background-color: $clr-form-input-checked-background;
+//  }
+//  // IE8 stuff... can't be grouped with the previous. Reasons unknown...
+//  input.checked + label:before {
+//    background-color: $clr-form-input-checked-background;
+//  }
+//  input.error + label:before {
+//    border-color: $clr-error;
+//  }
+//}
+

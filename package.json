@@ -1,0 +1,13 @@
+{
+    "name" : "cfffd",
+    "version" : "0.0.2",
+    "author" : "Peter Briers",
+    "private" : true,
+    "devDependencies" : {
+        "grunt" : "~0.4.2",
+        "matchdep": "*",
+        "grunt-contrib-sass" : "latest",
+        "grunt-contrib-watch" : "latest",
+        "grunt-autoprefixer" : "latest"
+    }
+}

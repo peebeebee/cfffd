@@ -1,0 +1,23 @@
+{
+  "name": "Custom form fields for Drupal",
+  "main": "cfffd.js",
+  "version": "0.0.2",
+  "homepage": "http://peterbriers.be",
+  "authors": [
+    "Peter Briers <peter.briers@gmail.com>"
+  ],
+  "description": "Custom form fields for Drupal",
+  "keywords": [
+    "Drupal",
+    "Forms"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

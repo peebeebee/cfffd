@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/** @file Custom form fields for Drupal (cff)  This is part of the cfffd library to have custom... - checkboxes - radios - selects - filefields  @author: Peter Briers @version: 0.0.2 */
+.cff-container { position: relative; display: inline-block; }
+
+.cff-input:focus + .cff-replacement, .cff-input:active + .cff-replacement { -webkit-box-shadow: 0 0 6px 2px #86B0D6; box-shadow: 0 0 6px 2px #86B0D6; }
+
+.cff-select .cff-replacement { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: white; z-index: 10; }
+.cff-select .cff-feedback { display: block; padding: 0.25ex 1ex; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cff-select .cff-button { float: right; text-align: center; padding: 0.25ex 1ex; position: relative; }
+.cff-select .cff-button:before { content: '▼'; }
+.cff-select .cff-input { position: relative; z-index: 20; opacity: 0; }
+.cff-select .cff-input:focus { outline: none; border: none !important; }
