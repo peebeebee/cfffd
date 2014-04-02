@@ -6,7 +6,7 @@ input:focus, button:focus, textarea:focus, select:focus { outline: #dcf solid 1p
 
 .dcf-container { position: relative; display: inline-block; }
 
-.dcf-input:focus + .dcf-replacement, .dcf-input:active + .dcf-replacement { outline: #1dcf solid 1px; }
+.dcf-input:focus + .dcf-replacement, .dcf-input:active + .dcf-replacement { outline: #dcf solid 1px; }
 
 .dcf-select .dcf-replacement { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: white; z-index: 10; }
 .dcf-select .dcf-feedback { display: block; padding: 0.25ex 1ex; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -17,7 +17,7 @@ input:focus, button:focus, textarea:focus, select:focus { outline: #dcf solid 1p
 
 .form-type-radio, .form-type-checkbox { position: relative; }
 .form-type-radio input, .form-type-checkbox input { left: -2000px; position: absolute; }
-.form-type-radio input:focus + label:before, .form-type-checkbox input:focus + label:before { outline: #1dcf solid 1px; }
+.form-type-radio input:focus + label:before, .form-type-checkbox input:focus + label:before { outline: #dcf solid 1px; }
 .form-type-radio label, .form-type-checkbox label { padding: 0 0 0 25px; min-height: 20px; }
 .form-type-radio label:before, .form-type-checkbox label:before { text-align: center; content: ''; position: absolute; left: 0; top: 0; display: block; background-color: white; width: 20px; height: 20px; line-height: 20px; }
 

@@ -10,10 +10,12 @@
 (function( $ ) {
 
   $.fn.dcfFile = function() {
-    var $container = $(this);
-    var $button = $('.dcf-button', $container);
-    var $feedback = $('.dcf-feedback', $container);
-    var $input = $('.dcf-input', $container);
+    var $input = $('input', this);
+    var $container = $input.wrap('<div class="dcf-container dcf-select">').parent();
+    var $replacement = $('<div class="dcf-replacement"></div>').insertAfter($input);
+    var $button = $('<span class="dcf-button"></span>').appendTo($replacement);
+    var $feedback = $('<span class="dcf-feedback"></span>').appendTo($replacement);
+
     $container
       .click(function(event) {
         $input.trigger('click');
@@ -38,12 +40,12 @@
 
   $.fn.dcfSelect = function() {
     var $input = $('select', this);
-    var $container = $input.wrap('<div class="cff-container cff-select">').parent();
-    var $replacement = $('<div class="cff-replacement"></div>').insertAfter($input);
-    var $button = $('<span class="cff-button"></span>').appendTo($replacement);
-    var $feedback = $('<span class="cff-feedback"></span>').appendTo($replacement);
+    var $container = $input.wrap('<div class="dcf-container dcf-select">').parent();
+    var $replacement = $('<div class="dcf-replacement"></div>').insertAfter($input);
+    var $button = $('<span class="dcf-button"></span>').appendTo($replacement);
+    var $feedback = $('<span class="dcf-feedback"></span>').appendTo($replacement);
     $input
-      .addClass('cff-input')
+      .addClass('dcf-input')
       .bind('change',function(){
         var currentSelected = $container.find(':selected');
         var html = currentSelected.html() || '&nbsp;';
@@ -65,7 +67,7 @@
 
   $.fn.dcfCheckbox = function() {
     // Add checked class to checkbox labels.
-    $('.form-type-checkbox label').click(function() {
+    $('label', this).click(function() {
       $(this).toggleClass('checked');
     });
   }
@@ -88,7 +90,7 @@
   }
 
   $.dcf = function() {
-    $('.form-type-radio').dcfFile();
+    $('.form-type-file').dcfFile();
     $('.form-type-checkbox').dcfCheckbox();
     $('.form-type-radio').dcfRadio();
     $('.form-type-select').dcfSelect();

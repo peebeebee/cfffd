@@ -38,7 +38,7 @@ select {
 // Redo Focus
 .dcf-input:focus + .dcf-replacement,
 .dcf-input:active + .dcf-replacement {
-  outline: #1dcf solid 1px;
+  outline: #dcf solid 1px;
 }
 
 // Custom select
@@ -89,7 +89,7 @@ select {
     left: -2000px;
     position: absolute;
     &:focus + label:before {
-      outline: #1dcf solid 1px;
+      outline: #dcf solid 1px;
     }
   }
   label {
