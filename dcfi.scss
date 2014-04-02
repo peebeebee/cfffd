@@ -3,7 +3,7 @@
  * @file
  * Custom form fields for Drupal (cff)
  *
- * This is part of the cfffd library to have custom...
+ * This is part of the dcfi library to have custom...
  * - checkboxes
  * - radios
  * - selects
@@ -25,32 +25,32 @@ select {
   outline-offset: 0px;
   border: none;
   &:focus {
-    outline: #1cfffd solid 1px;
+    outline: #1dcfi solid 1px;
   }
 }
 
 // Custom form replacement container
-.cff-container {
+.dcfi-container {
   position: relative;
   display: inline-block;
 }
 
 // Redo Focus
-.cff-input:focus + .cff-replacement,
-.cff-input:active + .cff-replacement {
-  outline: #1cfffd solid 1px;
+.dcfi-input:focus + .dcfi-replacement,
+.dcfi-input:active + .dcfi-replacement {
+  outline: #1dcfi solid 1px;
 }
 
 // Custom select
-.cff-select {
-  .cff-replacement {
+.dcfi-select {
+  .dcfi-replacement {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     background-color: white;
     z-index: 10;
   }
 
-  .cff-feedback {
+  .dcfi-feedback {
     display: block;
     padding: 0.25ex 1ex;
     white-space: nowrap;
@@ -58,7 +58,7 @@ select {
     text-overflow: ellipsis;
   }
 
-  .cff-button {
+  .dcfi-button {
     float: right;
     text-align: center;
     padding: 0.25ex 1ex;
@@ -68,7 +68,7 @@ select {
     }
   }
 
-  .cff-input {
+  .dcfi-input {
     position: relative;
     z-index: 20;
     opacity: 0;
@@ -89,7 +89,7 @@ select {
     left: -2000px;
     position: absolute;
     &:focus + label:before {
-      outline: #1cfffd solid 1px;
+      outline: #1dcfi solid 1px;
     }
   }
   label {

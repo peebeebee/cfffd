@@ -9,13 +9,11 @@
 
 (function( $ ) {
 
-  $.fn.cffFile = function() {
-
-
+  $.fn.dcfiFile = function() {
     var $container = $(this);
-    var $button = $('.cff-button', $container);
-    var $feedback = $('.cff-feedback', $container);
-    var $input = $('.cff-input', $container);
+    var $button = $('.dcfi-button', $container);
+    var $feedback = $('.dcfi-feedback', $container);
+    var $input = $('.dcfi-input', $container);
     $container
       .click(function(event) {
         $input.trigger('click');
@@ -38,7 +36,7 @@
       });
   }
 
-  $.fn.cffSelect = function() {
+  $.fn.dcfiSelect = function() {
     var $input = $(this);
     var $container = $input.wrap('<div class="cff-container cff-select">').parent();
     var $replacement = $('<div class="cff-replacement"></div>').insertAfter($input);
@@ -52,7 +50,6 @@
         $feedback.html(html);
       })
       .click(function(event){
-        console.log('whut');
         $input.data('val', $input.val());
         //for IE and Opera, make sure change fires after choosing a file, using an async callback
         setTimeout(function(){ $input.trigger('checkChange'); }, 100);
@@ -64,6 +61,37 @@
         }
       })
       .trigger('change');
+  }
+
+  $.fn.dcfiCheckbox = function() {
+    // Add checked class to checkbox labels.
+    $('.form-type-checkbox label').click(function() {
+      $(this).toggleClass('checked');
+    });
+  }
+
+  $.fn.dcfiRadio = function() {
+    // Add checked class to radio button labels.
+    $('.form-type-radio .form-radio:checked').parent().find('label').addClass('checked');
+    $('.form-type-radio label').click(function() {
+      if (! $(this).hasClass('checked')) {
+        $(this).toggleClass('checked');
+        $('.form-type-radio label').not(this).removeClass('checked');
+      }
+      // Clicking label not fully triggers checkbox to be checked in IE (MOBICZ-406).
+      var checkbox = $(this).closest('.form-radio');
+      var forAttribute = $(this).attr('for');
+      if (!checkbox.is(':checked') && forAttribute !== '') {
+        $('#' + forAttribute).click().change();
+      }
+    });
+  }
+
+  $.dcfi = function() {
+    $('input[type=file]').dcfiFile();
+    $('input[type=checkbox]').dcfiCheckbox();
+    $('input[type=radio]').dcfiRadio();
+    $('select').dcfiSelect();
   }
 
 })( jQuery );
