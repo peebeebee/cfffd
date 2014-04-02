@@ -11,10 +11,10 @@
 
   $.fn.dcfFile = function() {
     var $input = $('input', this);
-    var $container = $input.wrap('<div class="dcf-container dcf-select">').parent();
+    var $container = $input.wrap('<div class="dcf-container dcf-file">').parent();
     var $replacement = $('<div class="dcf-replacement"></div>').insertAfter($input);
-    var $button = $('<span class="dcf-button"></span>').appendTo($replacement);
-    var $feedback = $('<span class="dcf-feedback"></span>').appendTo($replacement);
+    var $button = $('<span class="dcf-button">Choose file</span>').appendTo($replacement);
+    var $feedback = $('<span class="dcf-feedback">No file selected...</span>').appendTo($replacement);
 
     $container
       .click(function(event) {
