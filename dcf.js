@@ -21,6 +21,7 @@
         $input.trigger('click');
       });
     $input
+      .addClass('dcf-input')
       .bind('change',function() {
         var filename = $(this).val().split(/\\/).pop();
         $feedback.text(filename);
