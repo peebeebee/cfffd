@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/** @file Drupal Custom Form  This is part of the dcf library to have custom... - checkboxes - radios - selects - filefields  @author: Peter Briers @version: 0.0.2 */
+/** RESET */
+input, button, textarea, select { padding: 0; outline: 0; outline-offset: 0px; border: none; }
+input:focus, button:focus, textarea:focus, select:focus { outline: #dcf solid 1px; }
+
+.dcf-container { position: relative; display: inline-block; }
+
+.dcf-input:focus + .dcf-replacement, .dcf-input:active + .dcf-replacement { outline: #1dcf solid 1px; }
+
+.dcf-select .dcf-replacement { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: white; z-index: 10; }
+.dcf-select .dcf-feedback { display: block; padding: 0.25ex 1ex; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dcf-select .dcf-button { float: right; text-align: center; padding: 0.25ex 1ex; position: relative; }
+.dcf-select .dcf-button:before { content: '▼'; }
+.dcf-select .dcf-input { position: relative; z-index: 20; opacity: 0; }
+.dcf-select .dcf-input:focus { outline: none; border: none !important; }
+
+.form-type-radio, .form-type-checkbox { position: relative; }
+.form-type-radio input, .form-type-checkbox input { left: -2000px; position: absolute; }
+.form-type-radio input:focus + label:before, .form-type-checkbox input:focus + label:before { outline: #1dcf solid 1px; }
+.form-type-radio label, .form-type-checkbox label { padding: 0 0 0 25px; min-height: 20px; }
+.form-type-radio label:before, .form-type-checkbox label:before { text-align: center; content: ''; position: absolute; left: 0; top: 0; display: block; background-color: white; width: 20px; height: 20px; line-height: 20px; }
+
+.form-type-radio label:before { border-radius: 20px; }
+.form-type-radio label.checked:before { content: '●'; }
+
+.form-type-checkbox label:before { border-radius: 3px; }
+.form-type-checkbox label.checked:before { content: '✔'; font-size: 22px; text-indent: 5px; }

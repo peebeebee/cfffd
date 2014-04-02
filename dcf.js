@@ -9,11 +9,11 @@
 
 (function( $ ) {
 
-  $.fn.dcfiFile = function() {
+  $.fn.dcfFile = function() {
     var $container = $(this);
-    var $button = $('.dcfi-button', $container);
-    var $feedback = $('.dcfi-feedback', $container);
-    var $input = $('.dcfi-input', $container);
+    var $button = $('.dcf-button', $container);
+    var $feedback = $('.dcf-feedback', $container);
+    var $input = $('.dcf-input', $container);
     $container
       .click(function(event) {
         $input.trigger('click');
@@ -36,8 +36,8 @@
       });
   }
 
-  $.fn.dcfiSelect = function() {
-    var $input = $(this);
+  $.fn.dcfSelect = function() {
+    var $input = $('select', this);
     var $container = $input.wrap('<div class="cff-container cff-select">').parent();
     var $replacement = $('<div class="cff-replacement"></div>').insertAfter($input);
     var $button = $('<span class="cff-button"></span>').appendTo($replacement);
@@ -63,14 +63,14 @@
       .trigger('change');
   }
 
-  $.fn.dcfiCheckbox = function() {
+  $.fn.dcfCheckbox = function() {
     // Add checked class to checkbox labels.
     $('.form-type-checkbox label').click(function() {
       $(this).toggleClass('checked');
     });
   }
 
-  $.fn.dcfiRadio = function() {
+  $.fn.dcfRadio = function() {
     // Add checked class to radio button labels.
     $('.form-type-radio .form-radio:checked').parent().find('label').addClass('checked');
     $('.form-type-radio label').click(function() {
@@ -87,11 +87,11 @@
     });
   }
 
-  $.dcfi = function() {
-    $('input[type=file]').dcfiFile();
-    $('input[type=checkbox]').dcfiCheckbox();
-    $('input[type=radio]').dcfiRadio();
-    $('select').dcfiSelect();
+  $.dcf = function() {
+    $('.form-type-radio').dcfFile();
+    $('.form-type-checkbox').dcfCheckbox();
+    $('.form-type-radio').dcfRadio();
+    $('.form-type-select').dcfSelect();
   }
 
 })( jQuery );
