@@ -49,6 +49,7 @@ select {
     top: 0; right: 0; bottom: 0; left: 0;
     background-color: white;
     z-index: 10;
+    cursor: pointer;
   }
 
   .dcf-feedback {
@@ -70,6 +71,7 @@ select {
     position: relative;
     z-index: 20;
     opacity: 0;
+    cursor: pointer;
     &:focus {
       outline: none;
       border: none !important;

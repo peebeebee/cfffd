@@ -8,10 +8,10 @@ input:focus, button:focus, textarea:focus, select:focus { outline: #dcf solid 1p
 
 .dcf-input:focus + .dcf-replacement, .dcf-input:active + .dcf-replacement { outline: #dcf solid 1px; }
 
-.dcf-select .dcf-replacement, .dcf-file .dcf-replacement { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: white; z-index: 10; }
+.dcf-select .dcf-replacement, .dcf-file .dcf-replacement { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: white; z-index: 10; cursor: pointer; }
 .dcf-select .dcf-feedback, .dcf-file .dcf-feedback { display: block; padding: 0.25ex 1ex; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .dcf-select .dcf-button, .dcf-file .dcf-button { float: right; text-align: center; padding: 0.25ex 1ex; position: relative; }
-.dcf-select .dcf-input, .dcf-file .dcf-input { position: relative; z-index: 20; opacity: 0; }
+.dcf-select .dcf-input, .dcf-file .dcf-input { position: relative; z-index: 20; opacity: 0; cursor: pointer; }
 .dcf-select .dcf-input:focus, .dcf-file .dcf-input:focus { outline: none; border: none !important; }
 
 .dcf-select .dcf-button:before { content: '▼'; }
