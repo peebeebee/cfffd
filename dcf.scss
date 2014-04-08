@@ -71,6 +71,7 @@ select {
     position: relative;
     z-index: 20;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; // IE8
     cursor: pointer;
     &:focus {
       outline: none;

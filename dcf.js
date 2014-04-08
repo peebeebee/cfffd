@@ -45,25 +45,17 @@
     var $replacement = $('<div class="dcf-replacement"></div>').insertAfter($input);
     var $button = $('<span class="dcf-button"></span>').appendTo($replacement);
     var $feedback = $('<span class="dcf-feedback"></span>').appendTo($replacement);
+    var select_text = function() {
+      var currentSelected = $container.find(':selected');
+      var html = currentSelected.html() || '&nbsp;';
+      $feedback.html(html);
+    }
     $input
       .addClass('dcf-input')
-      .bind('change',function(){
-        var currentSelected = $container.find(':selected');
-        var html = currentSelected.html() || '&nbsp;';
-        $feedback.html(html);
-      })
-      .click(function(event){
-        $input.data('val', $input.val());
-        //for IE and Opera, make sure change fires after choosing a file, using an async callback
-        setTimeout(function(){ $input.trigger('checkChange'); }, 100);
-        event.stopPropagation();
-      })
-      .bind('checkChange', function(){
-        if($input.val() && $input.val() != $input.data('val')){
-          $input.trigger('change');
-        }
-      })
-      .trigger('change');
+      .live('change',function() { // jquery > 1.7: change 'live' to 'on' (live is deleted)
+        select_text();
+      });
+    select_text();
   }
 
   $.fn.dcfCheckbox = function() {
