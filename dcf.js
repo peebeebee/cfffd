@@ -40,22 +40,24 @@
   }
 
   $.fn.dcfSelect = function() {
-    var $input = $('select', this);
-    var $container = $input.wrap('<div class="dcf-container dcf-select">').parent();
-    var $replacement = $('<div class="dcf-replacement"></div>').insertAfter($input);
-    var $button = $('<span class="dcf-button"></span>').appendTo($replacement);
-    var $feedback = $('<span class="dcf-feedback"></span>').appendTo($replacement);
-    var select_text = function() {
-      var currentSelected = $container.find(':selected');
-      var html = currentSelected.html() || '&nbsp;';
-      $feedback.html(html);
-    }
-    $input
-      .addClass('dcf-input')
-      .live('change',function() { // jquery > 1.7: change 'live' to 'on' (live is deleted)
-        select_text();
-      });
-    select_text();
+    $('select').each(function() {
+      var $input = $(this);
+      var $container = $input.wrap('<div class="dcf-container dcf-select">').parent();
+      var $replacement = $('<div class="dcf-replacement"></div>').insertAfter($input);
+      var $button = $('<span class="dcf-button"></span>').appendTo($replacement);
+      var $feedback = $('<span class="dcf-feedback"></span>').appendTo($replacement);
+      var select_text = function() {
+        var currentSelected = $container.find(':selected');
+        var html = currentSelected.html() || '&nbsp;';
+        $feedback.html(html);
+      }
+      $input
+        .addClass('dcf-input')
+        .live('change',function() { // jquery > 1.7: change 'live' to 'on' (live is deleted)
+          select_text();
+        });
+      select_text();
+    });
   }
 
   $.fn.dcfCheckbox = function() {
