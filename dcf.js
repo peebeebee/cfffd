@@ -10,7 +10,7 @@
 (function( $ ) {
 
   $.fn.dcfFile = function() {
-    var $input = $('input', this);
+    var $input = $('input:first', this);
     var $container = $input.wrap('<div class="dcf-container dcf-file">').parent();
     var $replacement = $('<div class="dcf-replacement"></div>').insertAfter($input);
     var $button = $('<span class="dcf-button">Choose file</span>').appendTo($replacement);
@@ -85,7 +85,7 @@
   }
 
   $.dcf = function() {
-    $('.form-type-file').dcfFile();
+    $('.form-type-file, .form-managed-file').dcfFile();
     $('.form-type-checkbox').dcfCheckbox();
     $('.form-type-radio').dcfRadio();
     $('.form-type-select').dcfSelect();
